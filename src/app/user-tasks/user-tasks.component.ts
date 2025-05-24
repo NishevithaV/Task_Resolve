@@ -7,5 +7,6 @@ import { Component, Input } from '@angular/core';
   styleUrl: './user-tasks.component.css'
 })
 export class UserTasksComponent {
-  @Input({ required: true }) name!: string;
+  // question mark - optional property
+  @Input() name?: string;
 }
