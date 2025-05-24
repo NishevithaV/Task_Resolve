@@ -17,7 +17,8 @@ export class UserComponent {
   // avatar = input.required<string>(); // avatar property is an input to this component
   // name = input.required<string>();
 
-  @Output() select = new EventEmitter();
+  @Output() select = new EventEmitter<string>();
+  // select = output<string>();
 
   // only computes when avatar changes - improves efficiency
   imagePath = computed(() => {
