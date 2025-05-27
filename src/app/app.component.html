@@ -3,15 +3,18 @@
 <main>
   <ul id="users">
     <!-- passes invididual user data as inputs to usercomp using property binding -->
-     @for (user of users; track user.id) {
-      <li>
+      <li *ngFor="let user of users">
         <app-user
           [user]="user"
           (select)="onSelectUser($event)"
         />
       </li>
-     }
   </ul>
 
-  <user-tasks [name]="selectedUser ? selectedUser.name : ''" />
+  <!-- only displayed after user is elected -->
+  <user-tasks *ngIf="selectedUser; else fallback" [userId]="selectedUser.id" [name]="selectedUser!.name" />
+  <ng-template #fallback>
+    <p id="fallback"> Select a user to see their tasks!</p>
+  </ng-template>
+  
 </main>

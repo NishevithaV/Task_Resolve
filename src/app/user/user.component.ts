@@ -1,4 +1,4 @@
-import { Component, Input, Output, input, computed, EventEmitter, output } from '@angular/core';
+import { Component, Input, Output, computed, EventEmitter } from '@angular/core';
 
 interface User {
     id: string;
