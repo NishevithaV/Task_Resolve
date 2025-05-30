@@ -1,10 +1,5 @@
 import { Component, Input, Output, computed, EventEmitter } from '@angular/core';
-
-interface User {
-    id: string;
-    avatar: string;
-    name: string;
-};
+import { type User } from './user.model'; 
 
 @Component({
   selector: 'app-user',
@@ -16,6 +11,7 @@ export class UserComponent {
   // settable from outside
   // exclamation mark means value of property will be set from outside - allows to bind data from parent component
   @Input({required: true}) user!: User;
+  @Input({required: true}) selected!: boolean;
 
   // avatar = input.required<string>(); // avatar property is an input to this component
   // name = input.required<string>();

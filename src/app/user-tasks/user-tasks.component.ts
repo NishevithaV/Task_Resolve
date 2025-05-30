@@ -16,7 +16,7 @@ export class UserTasksComponent {
       id: 't1',
       userId: 'u1',
       title: 'Complete First Quarterly Report',
-      description:
+      summary:
         'Prepare and submit the first quarterly report for the management team.',
       dueDate: '2025-12-31',
     },
@@ -35,9 +35,27 @@ export class UserTasksComponent {
         'Prepare and describe an issue template which will help with project management',
       dueDate: '2024-06-15',
     },
+    {
+      id: 't4',
+      userId: 'u1',
+      title: 'Update Employee Handbook',
+      summary: 'Revise and update the employee handbook for 2025.',
+      dueDate: '2025-07-15',
+    },
+    {
+      id: 't5',
+      userId: 'u2',
+      title: 'Organize Team Meeting',
+      summary: 'Schedule and organize the monthly team meeting.',
+      dueDate: '2024-06-10',
+    },
   ];
 
   get selectedUserTasks() {
     return this.tasks.filter((task) => task.userId === this.userId);
+  }
+
+  onCompleteTask(id: string) {
+    this.tasks = this.tasks.filter((task) => task.id !== id);
   }
 }

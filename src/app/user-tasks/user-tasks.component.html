@@ -9,7 +9,8 @@
     <ul>
         @for (task of selectedUserTasks; track task.id) {
             <li>
-                <app-task />
+                <!-- $event to access event-data emitted -->
+                <app-task [task]="task" (complete)="onCompleteTask($event)" />
             </li>
         }
     </ul>
