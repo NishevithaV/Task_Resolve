@@ -1,6 +1,7 @@
-@if (isAddingNewTask) {
-    <app-new-task />
-}
+
+<!-- cancel emitted from new-task triggers function call here -->
+<app-new-task *ngIf="isAddingNewTask" (cancel)="onCancelAddTask()" />
+
 
 <section id="tasks">
     <header>

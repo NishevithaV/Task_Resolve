@@ -1,10 +1,11 @@
 import { Component, Input } from '@angular/core';
+import { NgIf } from '@angular/common';
 import { TaskComponent } from './task/task.component';
 import { NewTaskComponent } from "./new-task/new-task.component";
 
 @Component({
   selector: 'user-tasks',
-  imports: [TaskComponent, NewTaskComponent],
+  imports: [TaskComponent, NewTaskComponent, NgIf],
   templateUrl: './user-tasks.component.html',
   styleUrl: './user-tasks.component.css',
 })
@@ -65,5 +66,9 @@ export class UserTasksComponent {
 
   addNewTask() {
     this.isAddingNewTask = true;
+  }
+
+  onCancelAddTask() {
+    this.isAddingNewTask = false;
   }
 }
