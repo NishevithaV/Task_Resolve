@@ -1,7 +1,8 @@
 <div class="backdrop" (click)="onCancel()"></div>
 <dialog open>
   <h2>Add Task</h2>
-  <form>
+  <!-- ngSubmit event binding allows to handle prevention of default form submission -->
+  <form (ngSubmit)="onSubmit()">
     <p>
       <label for="title">Title</label>
       <!-- ngModel allows to get access to value entered in form related elements-->
