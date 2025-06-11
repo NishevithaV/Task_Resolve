@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { NgIf } from '@angular/common';
 import { TaskComponent } from './task/task.component';
 import { NewTaskComponent } from "./new-task/new-task.component";
+import { type NewTaskData } from './task/task.model';
 
 @Component({
   selector: 'user-tasks',
@@ -69,6 +70,18 @@ export class UserTasksComponent {
   }
 
   onCancelAddTask() {
+    this.isAddingNewTask = false;
+  }
+
+  onAddTask(taskData: NewTaskData) {
+    // .unshift() pushes new task to start of array
+    this.tasks.push({
+      id: new Date().getTime().toString(),
+      userId: this.userId,
+      title: taskData.title,
+      summary: taskData.summary,
+      dueDate: taskData.date,
+    })
     this.isAddingNewTask = false;
   }
 }
