@@ -75,7 +75,8 @@ export class UserTasksComponent {
 
   onAddTask(taskData: NewTaskData) {
     // .unshift() pushes new task to start of array
-    this.tasks.push({
+    // .push() to add to end of array
+    this.tasks.unshift({
       id: new Date().getTime().toString(),
       userId: this.userId,
       title: taskData.title,
