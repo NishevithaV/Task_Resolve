@@ -1,6 +1,6 @@
 
 <!-- cancel emitted from new-task triggers function call here -->
-<app-new-task *ngIf="isAddingNewTask" (cancel)="onCancelAddTask()" (add)="onAddTask($event)" />
+<app-new-task *ngIf="isAddingNewTask" [userId]="userId" (close)="onCloseAddTask()"  />
 
 
 <section id="tasks">

@@ -22,22 +22,16 @@ export class UserTasksComponent {
   constructor(private tasksService: TasksService) {}
 
   get selectedUserTasks() {
-    return
+    return this.tasksService.getUserTasks(this.userId);
   }
 
-  onCompleteTask(id: string) {
-    
-  }
+  onCompleteTask(id: string) {}
 
   addNewTask() {
     this.isAddingNewTask = true;
   }
 
-  onCancelAddTask() {
-    this.isAddingNewTask = false;
-  }
-
-  onAddTask(taskData: NewTaskData) {
+  onCloseAddTask() {
     this.isAddingNewTask = false;
   }
 }
